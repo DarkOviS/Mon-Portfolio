@@ -27,7 +27,23 @@ const read = (req, res) => {
       res.sendStatus(500);
     });
 };
+const getUserByEmailWithPasswordAndPassToNext = (req, res, next) => {
+  models.user
+    .getUserByEmail(req.body)
+    .then(([user]) => {
+      if (user[0] != null) {
+        [req.user] = user;
 
+        next();
+      } else {
+        res.sendStatus(401);
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};
 const edit = (req, res) => {
   const user = req.body;
 
@@ -88,4 +104,5 @@ module.exports = {
   edit,
   add,
   destroy,
+  getUserByEmailWithPasswordAndPassToNext,
 };

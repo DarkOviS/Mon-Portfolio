@@ -1,0 +1,22 @@
+GET http://localhost:5001/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY3NTMyODg3NywiZXhwIjoxNjc1MzMyNDc3fQ.yvu8FGLrp_e3APrQEk37Q0546OJZWfle3hrn9VrsCi4
+###
+POST http://localhost:5001/login
+Content-Type: application/json
+
+{
+    "email": "romain.bronquard@gmail.com",
+    "password": "coucoutoi"
+}
+###
+POST http://localhost:5001/users
+Content-Type: application/json
+
+{
+    "firstname": "Romain",
+    "lastname": "Bronquard",
+    "username": "DarkOviS",
+    "email": "romain.bronquard@gmail.com",
+    "password": "coucoutoi",
+    "tel_number": "0670046610"
+}

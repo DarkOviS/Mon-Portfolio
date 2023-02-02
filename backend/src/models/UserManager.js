@@ -28,8 +28,14 @@ class ItemManager extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `select firstname, lastname, username, email, tel_number from  ${this.table}`
+      `select id ,firstname, lastname, username, email, tel_number from  ${this.table}`
     );
+  }
+
+  getUserByEmail(user) {
+    return this.connection.query("select * from user where email = ?", [
+      user.email,
+    ]);
   }
 }
 
