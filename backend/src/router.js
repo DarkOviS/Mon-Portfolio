@@ -19,12 +19,10 @@ router.get("/skills/:id", skillControllers.read);
 router.get("/projects", projectControllers.browse);
 router.get("/projects/:id", projectControllers.read);
 
-router.post("/users", hashPassword, userControllers.add);
-
-// authentication wall
+router.use(verifyToken); // authentication wall
 
 router.get("/users", userControllers.browse);
-router.use(verifyToken);
+router.post("/users", hashPassword, userControllers.add);
 router.get("/users/:id", userControllers.read);
 router.put("/users/:id", userControllers.edit);
 
