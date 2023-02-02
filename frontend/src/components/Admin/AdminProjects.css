@@ -1,0 +1,13 @@
+.edit_button,
+.delete_button {
+  width: 2rem;
+  height: 2rem;
+}
+
+.edit_button:hover {
+  color: green;
+}
+
+.delete_button:hover {
+  color: red;
+}

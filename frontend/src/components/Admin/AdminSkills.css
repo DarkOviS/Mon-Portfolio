@@ -1,0 +1,23 @@
+.edit_button,
+.delete_button {
+  width: 2rem;
+  height: 2rem;
+}
+
+.edit_button:hover {
+  color: green;
+}
+
+.delete_button:hover {
+  color: red;
+}
+.Admin-skill {
+  display: flex;
+}
+.form-skill {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  color: #ffff;
+}

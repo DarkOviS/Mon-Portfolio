@@ -13,8 +13,13 @@ import About from "./components/About";
 import Skill from "./components/Skill";
 import Login from "./components/Login";
 import Project from "./components/Project";
+import Admin from "./components/Admin/AdminMenu";
 import Contact from "./components/Contact";
 import { AuthContext } from "./contexts/AuthContext";
+import AdminSkillEdit from "./components/Admin/AdminSkillEdit";
+import AdminSkills from "./components/Admin/AdminSkills";
+import AdminProjects from "./components/Admin/AdminProjects";
+import AdminProjectEdit from "./components/Admin/AdminProjectEdit";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -28,12 +33,21 @@ function App() {
 
           <Route path="/project" element={<Project />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
           <Route
             element={
               auth.isAuthenticated ? <Outlet /> : <Navigate to="/login" />
             }
           >
-            <Route path="/login" element={<Login />} />
+            <Route path="/admin" element={<Admin />} />
+
+            <Route path="/admin/skills" element={<AdminSkills />} />
+            <Route path="/admin/projects" element={<AdminProjects />} />
+            <Route path="/admin/edit/skill/:id" element={<AdminSkillEdit />} />
+            <Route
+              path="/admin/edit/project/:id"
+              element={<AdminProjectEdit />}
+            />
           </Route>
         </Routes>
       </Router>
