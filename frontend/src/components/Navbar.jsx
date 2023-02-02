@@ -28,55 +28,55 @@ export default function Navbar() {
   }, []);
   return (
     <nav className="Navbar">
-      <div>
+      <Link to="/">
         <img src="src/assets/R.png" alt="Logo_R" className="logo" />
-      </div>
+      </Link>
       {(toggleMenu || width > breakpoint) && (
-        <>
-          <div className="NavLink">
-            <Link to="/about" className="list">
-              A propos
-            </Link>
-            <Link to="/project" className="list">
-              Projets
-            </Link>
-            <Link to="/skill" className="list">
-              Compétences
-            </Link>
-            <Link to="/contact" className="list">
-              Contact
-            </Link>
-          </div>
-          <Link to="/login">
-            <button type="button">Login</button>
+        <div className="NavLink">
+          <Link to="/about" className="list">
+            A propos
           </Link>
-        </>
-      )}
-      {width < breakpoint && (
-        <div>
-          {toggleMenu === false ? (
-            <div className="button-Navbar">
-              <button
-                type="button"
-                onClick={toggleNavSmallScreen}
-                className="btn"
-              >
-                <RxHamburgerMenu className="menuIcon" />
-              </button>
-            </div>
-          ) : (
-            <div className="button-Navbar">
-              <button
-                type="button"
-                onClick={toggleNavSmallScreen}
-                className="btn"
-              >
-                <RxCross1 className="menuIcon" />
-              </button>
-            </div>
-          )}
+          <Link to="/project" className="list">
+            Projets
+          </Link>
+          <Link to="/skill" className="list">
+            Compétences
+          </Link>
+          <Link to="/contact" className="list">
+            Contact
+          </Link>
         </div>
       )}
+      <div className="Container-btn">
+        <Link to="/login">
+          <button type="button">Login</button>
+        </Link>
+        {width < breakpoint && (
+          <div>
+            {toggleMenu === false ? (
+              <div className="button-Navbar">
+                <button
+                  type="button"
+                  onClick={toggleNavSmallScreen}
+                  className="btn"
+                >
+                  <RxHamburgerMenu className="menuIcon" />
+                </button>
+              </div>
+            ) : (
+              <div className="button-Navbar">
+                <button
+                  type="button"
+                  onClick={toggleNavSmallScreen}
+                  className="btn"
+                >
+                  <RxCross1 className="menuIcon" />
+                </button>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </nav>
   );
 }
