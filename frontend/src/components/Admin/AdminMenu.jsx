@@ -20,6 +20,9 @@ export default function AdminMenu() {
         <NavLink to="/admin/projects">
           <h2 className="border">Projects</h2>
         </NavLink>
+        <NavLink to="/admin/contact">
+          <h2 className="border">Contact</h2>
+        </NavLink>
       </nav>
     </div>
   );

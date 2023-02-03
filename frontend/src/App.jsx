@@ -20,6 +20,8 @@ import AdminSkillEdit from "./components/Admin/AdminSkillEdit";
 import AdminSkills from "./components/Admin/AdminSkills";
 import AdminProjects from "./components/Admin/AdminProjects";
 import AdminProjectEdit from "./components/Admin/AdminProjectEdit";
+import AdminContact from "./components/Admin/AdminContact";
+import AdminContactEdit from "./components/Admin/AdminContactEdit";
 
 function App() {
   const { auth } = useContext(AuthContext);
@@ -47,6 +49,11 @@ function App() {
             <Route
               path="/admin/edit/project/:id"
               element={<AdminProjectEdit />}
+            />
+            <Route path="/admin/contact" element={<AdminContact />} />
+            <Route
+              path="/admin/edit/contact/:id"
+              element={<AdminContactEdit />}
             />
           </Route>
         </Routes>

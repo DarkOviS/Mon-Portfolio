@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section>
+    <section className="about">
       <h1 className="title-about">A propos</h1>
       <p>
         Bonjour! Je m'appelle Romain et j'aime créer des choses qui vivent sur

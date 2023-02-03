@@ -33,9 +33,7 @@ a {
 p {
   color: #46c3bc;
 }
-.home {
-  padding: 0px 150px;
-}
+
 .main {
   display: flex;
   -webkit-box-pack: center;
@@ -132,10 +130,24 @@ h3 {
 h2 {
   color: #8894b1;
 }
-
+img {
+  width: 10rem;
+}
+.about,
+.Contact,
+#projects {
+  min-height: 100vh;
+  height: 100vh;
+}
 @media screen and (min-width: 992px) {
+  .home {
+    padding: 0px 150px;
+  }
   .NavLink {
     flex-direction: row;
     position: initial;
+  }
+  img {
+    width: 20rem;
   }
 }

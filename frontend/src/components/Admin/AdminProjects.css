@@ -11,3 +11,12 @@
 .delete_button:hover {
   color: red;
 }
+.project_edit,
+.project_admin {
+  display: flex;
+}
+.form_project_edit_form,
+.project_map {
+  display: flex;
+  flex-direction: column;
+}
